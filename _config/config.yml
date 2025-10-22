@@ -1,0 +1,12 @@
+---
+Name: toastnz-emaillayouts
+---
+
+Toast\Emails\EmailAdmin:
+  available_items:
+    - Toast\Emails\Items\TextItem
+    - Toast\Emails\Items\ImageItem
+
+SilverStripe\UserForms\Model\Recipient\EmailRecipient:
+  extensions:
+    - Toast\Extensions\CustomEmailRecipientExtension

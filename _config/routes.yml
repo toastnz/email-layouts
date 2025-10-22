@@ -1,0 +1,9 @@
+---
+Name: email-layouts-routes
+After:
+  - "#rootroutes"
+  - "#coreroutes"
+---
+SilverStripe\Control\Director:
+  rules:
+    _email-preview: Toast\Emails\EmailPreviewController
