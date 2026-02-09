@@ -35,9 +35,9 @@ class EmailLayoutItem extends DataObject
     //     'Parent' => EmailLayout::class
     // ];
 
-    // private static $belongs_many_many = [
-    //     'Parents' => EmailLayout::class
-    // ];
+    private static $belongs_many_many = [
+        'Parents' => EmailLayout::class
+    ];
 
     private static $summary_fields = [
         'IconForCMS' => 'Type',
@@ -58,7 +58,7 @@ class EmailLayoutItem extends DataObject
     {
         $fields = parent::getCMSFields();
 
-        $fields->removeByName(['ParentID', 'SortOrder']);
+        $fields->removeByName(['Parents', 'SortOrder']);
 
         $fields->addFieldsToTab('Root.Main', [
             TextField::create('Title', 'Title')
