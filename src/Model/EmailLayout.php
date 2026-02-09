@@ -42,6 +42,15 @@ class EmailLayout extends DataObject
         'FooterItems' => EmailLayoutItem::class,
     ];
 
+    private static $many_many_extraFields = [
+        'HeaderItems' => [
+            'SortOrder' => 'Int'
+        ],
+        'FooterItems' => [
+            'SortOrder' => 'Int'
+        ]
+    ];
+
     private static $summary_fields = [
         'Title' => 'Title',
         'Subject' => 'Subject',
