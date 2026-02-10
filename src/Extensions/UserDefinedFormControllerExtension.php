@@ -6,7 +6,11 @@ use Toast\Emails\EmailLayout;
 use SilverStripe\View\SSViewer;
 use SilverStripe\Core\Extension;
 use SilverStripe\Model\ArrayData;
+use SilverStripe\View\ViewLayerData;
+use SilverStripe\View\TemplateEngine;
 use SilverStripe\ORM\FieldType\DBField;
+use SilverStripe\Core\Injector\Injector;
+use SilverStripe\TemplateEngine\SSTemplateEngine;
 
 class UserDefinedFormControllerExtension extends Extension
 {
@@ -49,14 +53,17 @@ class UserDefinedFormControllerExtension extends Extension
                     }
                 }
 
-                $body = SSViewer::execute_template(
-                    'Toast\Emails\Email',
-                    new ArrayData([
+                $data = new ViewLayerData([
                         'Subject' => $subject,
                         'HeaderItems' => $headers,
                         'EmailContent' => DBField::create_field('HTMLText', $content),
+                        'Fields' => $emailData['Fields'],
                         'FooterItems' => $footers,
-                    ])
+                    ]) ;
+                // $engine = Injector::inst()->create(SSTemplateEngine::class);
+                $body = SSTemplateEngine::execute_template(
+                    'Toast\Emails\Email',
+                    $data
                 );
 
                 $email->setBody($body);
