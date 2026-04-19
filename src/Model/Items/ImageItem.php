@@ -3,10 +3,10 @@
 namespace Toast\Emails\Items;
 
 use SilverStripe\Assets\Image;
-use Sheadawson\Linkable\Models\Link;
 use Toast\Emails\Items\EmailLayoutItem;
-use Sheadawson\Linkable\Forms\LinkField;
 use SilverStripe\AssetAdmin\Forms\UploadField;
+use SilverStripe\LinkField\Models\Link;
+use SilverStripe\LinkField\Form\LinkField;
 
 class ImageItem extends EmailLayoutItem
 {
