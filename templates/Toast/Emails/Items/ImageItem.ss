@@ -9,7 +9,7 @@
                                 <tr>
                                     <td class="ImageContent" valign="top" style="padding-right: 0px; padding-left: 0px; padding-top: 0; padding-bottom: 0; text-align:center;">
                                         <% if $LinkID %>
-                                            <a href="{$Link.LinkURL}" aria-label="Open link for {$Title.ATT}">
+                                            <a href="{$Link.URL}" aria-label="Open link for {$Title.ATT}">
                                         <% end_if %>
 
                                         <% with $Image.ScaleMaxWidth(600) %>
