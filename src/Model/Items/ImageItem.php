@@ -35,7 +35,7 @@ class ImageItem extends EmailLayoutItem
                     ->setFolderName('Uploads/Emails')
                     ->setDescription('Image will display at 600px wide')
                     ->setAllowedExtensions(['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp']),
-                LinkField::create('LinkID', 'Link'),
+                LinkField::create('Link', 'Link'),
             ]);
         });
 
