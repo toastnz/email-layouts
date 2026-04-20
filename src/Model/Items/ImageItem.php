@@ -24,7 +24,8 @@ class ImageItem extends EmailLayoutItem
     ];
 
     private static $owns = [
-        'Image'
+        'Image',
+        'Link'
     ];
 
     public function getCMSFields()
